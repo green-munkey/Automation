@@ -1,20 +1,13 @@
-Run all the tests
+1. npm ci
+2. create .env file on the root
+   Will need the following variables:
 
-npx playwright test
-Run a single test file
+CI=1
+ENVIROMENT_URL=https://dev.trutik.io # comment
+ENVIROMENT_USERNAME=
+ENVIROMENT_PASSWORD=
 
-npx playwright test tests/todo-page.spec.ts
-Run a set of test files
+ADMIN_TENANT_IMPERSONATE=ENVIROTECHNWENVIROTECHNWCarrier 1/3/2022
+ADMIN_TENANT_IMPERSONATE_USER=Useradmin admin (ENVIROTECHNW@trutik.com)
 
-npx playwright test tests/todo-page/ tests/landing-page/
-Run files that have my-spec or my-spec-2 in the file name
-
-npx playwright test my-spec my-spec-2
-Run the test with the title
-
-npx playwright test -g "add a todo item"
-Run tests in headed browsers
-
-npx playwright test --headed
-
-npx playwright test LoginTest.spec.ts --headed
+3. npx playwright test login-test.spec.ts --headed
