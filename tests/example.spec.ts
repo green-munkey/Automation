@@ -1,7 +1,7 @@
 // example.spec.ts
-import { test, expect  } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
-test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
+test('my test', async ({ page, browserName, userAgent, isMobile }) => {
   console.log(browserName);
   console.log(userAgent);
   console.log(isMobile);
@@ -21,11 +21,11 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
   // Click [placeholder="Email or Username"]
   await page.locator('[placeholder="Email or Username"]').click();
   // Fill [placeholder="Email or Username"]
-  await page.locator('[placeholder="Email or Username"]').fill('admin');
+  await page.locator('[placeholder="Email or Username"]').fill('');
   // Click [placeholder="Password"]
   await page.locator('[placeholder="Password"]').click();
   // Fill [placeholder="Password"]
-  await page.locator('[placeholder="Password"]').fill('123qwe');
+  await page.locator('[placeholder="Password"]').fill('');
   await page.screenshot({ path: `${screenShots}/login-page-filled.png` });
   await Promise.all([
     page.waitForNavigation(/*{ url: 'https://dev.trutik.io/app/tenants' }*/),
@@ -43,8 +43,7 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
   ]);
   await page.screenshot({ path: `${screenShots}/dashboard-page.png` });
 
-  if (isMobile)
-  {
+  if (isMobile) {
     // Click .v-app-bar__nav-icon
     await page.locator('.v-app-bar__nav-icon').click();
   }
@@ -81,8 +80,7 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
     page.locator('text=Customers').first().click()
   ]);
   await page.screenshot({ path: `${screenShots}/list-customers.png` });
-  if (isMobile)
-  {
+  if (isMobile) {
     // Click .v-app-bar__nav-icon
     await page.locator('.v-app-bar__nav-icon').click();
   }
@@ -92,8 +90,7 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
     page.locator('text=Drivers').click()
   ]);
   await page.screenshot({ path: `${screenShots}/list-drivers.png` });
-  if (isMobile)
-  {
+  if (isMobile) {
     // Click .v-app-bar__nav-icon
     await page.locator('.v-app-bar__nav-icon').click();
   }
@@ -103,8 +100,7 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
     page.locator('text=Expense types').click()
   ]);
   await page.screenshot({ path: `${screenShots}/list-expense-type.png` });
-  if (isMobile)
-  {
+  if (isMobile) {
     // Click .v-app-bar__nav-icon
     await page.locator('.v-app-bar__nav-icon').click();
   }
@@ -112,8 +108,7 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
   await page.locator('a:nth-child(6) .v-list-item__content').click();
   await expect(page).toHaveURL('https://dev.trutik.io/app/lists/load-types');
   await page.screenshot({ path: `${screenShots}/list-load-type.png` });
-  if (isMobile)
-  {
+  if (isMobile) {
     // Click .v-app-bar__nav-icon
     await page.locator('.v-app-bar__nav-icon').click();
   }
@@ -123,8 +118,7 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
     page.locator('text=Locations').click()
   ]);
   await page.screenshot({ path: `${screenShots}/list-locations.png` });
-  if (isMobile)
-  {
+  if (isMobile) {
     // Click .v-app-bar__nav-icon
     await page.locator('.v-app-bar__nav-icon').click();
   }
@@ -134,8 +128,7 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
     page.locator('text=Product Categories').click()
   ]);
   await page.screenshot({ path: `${screenShots}/list-product-category.png` });
-  if (isMobile)
-  {
+  if (isMobile) {
     // Click .v-app-bar__nav-icon
     await page.locator('.v-app-bar__nav-icon').click();
   }
@@ -143,8 +136,7 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
   await page.locator('text=Products').first().click();
   await expect(page).toHaveURL('https://dev.trutik.io/app/lists/products');
   await page.screenshot({ path: `${screenShots}/list-products.png` });
-  if (isMobile)
-  {
+  if (isMobile) {
     // Click .v-app-bar__nav-icon
     await page.locator('.v-app-bar__nav-icon').click();
   }
@@ -152,8 +144,7 @@ test('my test', async ({ page , browserName , userAgent, isMobile  }) => {
   await page.locator('text=Trucks').click();
   await expect(page).toHaveURL('https://dev.trutik.io/app/lists/trucks');
   await page.screenshot({ path: `${screenShots}/list-trucks.png` });
-  if (isMobile)
-  {
+  if (isMobile) {
     // Click .v-app-bar__nav-icon
     await page.locator('.v-app-bar__nav-icon').click();
   }
